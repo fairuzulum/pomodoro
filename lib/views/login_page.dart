@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                           child: TextButton(
                             onPressed: () {},
                             child: Text('Forgot password?',
-                                style: TextStyle(color: Colors.blue)),
+                                style: TextStyle(color: Colors.grey)),
                           ),
                         ),
                         SizedBox(height: 20),
@@ -228,7 +228,7 @@ class LoginScreen extends StatelessWidget {
 
                         // Google Sign-In Button with Icon in Center using SizedBox
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.7, // 70% of screen width
+                          width: 80, // 70% of screen width
                           height: 48, // Height of the button
                           child: ElevatedButton(
                             onPressed: () async {
@@ -302,6 +302,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                      
                       ],
                     ),
                   ),

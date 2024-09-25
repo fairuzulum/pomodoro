@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:firebase_core/firebase_core.dart'; // Import Firebase Core
+import 'package:firebase_core/firebase_core.dart';
 import 'package:pomotime/views/login_page.dart';
-import 'views/pomodoro_timer_screen.dart'; // Import your Pomodoro screen
+import 'views/pomodoro_timer_screen.dart';
+import 'dart:async'; // Import untuk Timer
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); 
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
@@ -18,14 +19,48 @@ class MyApp extends StatelessWidget {
       title: 'Pomodoro Timer',
       theme: ThemeData(
         primaryColor: Color(0xFF3FA2F6),
-        primarySwatch: createMaterialColor(Color(0xFF3FA2F6)), 
+        primarySwatch: createMaterialColor(Color(0xFF3FA2F6)),
       ),
-      home: LoginScreen(),
+      home: SplashScreen(), // Ganti home jadi SplashScreen
     );
   }
 }
 
+// Membuat halaman splash screen
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
 
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Timer untuk berpindah dari SplashScreen ke halaman LoginScreen
+    Timer(Duration(seconds: 3), () {
+      Get.off(LoginScreen()); // Pindah ke halaman LoginScreen setelah 3 detik
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFF3FA2F6), // Warna background splash
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // Bisa diganti dengan logo aplikasi atau gambar lain
+            Image.asset('assets/logo.png', height: 120.0), 
+            SizedBox(height: 20.0),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Fungsi untuk membuat MaterialColor
 MaterialColor createMaterialColor(Color color) {
   List strengths = <double>[.05];
   Map<int, Color> swatch = {};
