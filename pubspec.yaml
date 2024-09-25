@@ -54,7 +54,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
   flutter_native_splash: ^2.4.1
-  flutter_launcher_icons: ^0.14.1
 
 flutter_native_splash:
   color: "#3FA2F6" # Warna latar belakang splash screen (gunakan kode warna HEX)
@@ -63,9 +62,7 @@ flutter_native_splash:
   ios: true # Menentukan apakah untuk platform iOS
   android_gravity: center # Mengatur posisi gambar di Android
 
-flutter_icons:
-  android: true
-  image_path: "assets/icon.png"
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -85,6 +82,7 @@ flutter:
     - assets/buttom.png
     - assets/splash_screen_image.png
     - assets/icon.png
+    - assets/app_icon.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
