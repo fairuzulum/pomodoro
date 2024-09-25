@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2' // Versi Gradle yang didukung
+        classpath 'com.google.gms:google-services:4.3.15' // Plugin Google Services
+    }
+}
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.pomotime.app"
+    compileSdkVersion 34 // Update ke versi SDK 34
+
+    defaultConfig {
+        applicationId "com.pomotime.app"
+        minSdkVersion 23 // Minimal SDK tetap 21 atau lebih
+        targetSdkVersion 34 // Update target SDK ke versi 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+flutter {
+    source = "../.." // Path ke source Flutter Anda
+}
+
+apply plugin: 'com.google.gms.google-services' // Aktifkan plugin Google Services

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "168748579066",
+    "project_id": "pomotime-efe48",
+    "storage_bucket": "pomotime-efe48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168748579066:android:65134e84862d3e8846b143",
+        "android_client_info": {
+          "package_name": "com.pomotime.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn5F_Iw6IQ6WOBnGOZpgObCY6BwA6U_Qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
